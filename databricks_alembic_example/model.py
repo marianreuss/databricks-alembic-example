@@ -20,7 +20,7 @@ class Base(DeclarativeBase):
 
 
 class SampleObject(Base):
-    __tablename__ = 'my_table'
+    __tablename__ = "my_table"
 
     bigint_col = Column(BigInteger, primary_key=True)
     string_col = Column(String)
