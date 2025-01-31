@@ -1,12 +1,13 @@
-from alembic_demo.model import Base, SampleObject
+from __future__ import annotations
+
 from logging.config import fileConfig
 
+from alembic import context
 from sqlalchemy import engine_from_config
 from sqlalchemy import pool
 
-from alembic import context
-from alembic_demo.connect import url
-
+from databricks_alembic_example.connect import url
+from databricks_alembic_example.model import Base
 
 
 # this is the Alembic Config object, which provides
@@ -70,7 +71,8 @@ def run_migrations_online() -> None:
 
     with connectable.connect() as connection:
         context.configure(
-            connection=connection, target_metadata=target_metadata
+            connection=connection,
+            target_metadata=target_metadata,
         )
 
         with context.begin_transaction():
