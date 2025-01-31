@@ -23,7 +23,7 @@ class SampleObject(Base):
     __tablename__ = "my_table"
 
     bigint_col = Column(BigInteger, primary_key=True)
-    string_col = Column(String)
+    string_col = Column(String, comment="this is a comment")
     tinyint_col = Column(TINYINT)
     int_col = Column(Integer)
     numeric_col = Column(Numeric(10, 2))
@@ -33,4 +33,4 @@ class SampleObject(Base):
     datetime_col_ntz = Column(DateTime)
     time_col = Column(Time)
     uuid_col = Column(Uuid)
-    # foo_col = Column(String)
+    foo_col = Column(String)
