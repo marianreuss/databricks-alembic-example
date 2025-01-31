@@ -33,4 +33,4 @@ class SampleObject(Base):
     datetime_col_ntz = Column(DateTime)
     time_col = Column(Time)
     uuid_col = Column(Uuid)
-    foo_col = Column(String)
+    # foo_col = Column(String)
