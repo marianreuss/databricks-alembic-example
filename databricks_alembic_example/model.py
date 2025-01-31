@@ -2,14 +2,13 @@ from sqlalchemy.orm import DeclarativeBase
 import sqlalchemy as sa
 from sqlalchemy import Column, BigInteger, String, Integer, DateTime, Time, Uuid, Boolean, Date, Numeric
 from databricks.sqlalchemy import TIMESTAMP, TINYINT
-from connect import get_engine
 
 
 class Base(DeclarativeBase):
 	pass
 
 class SampleObject(Base):
-	__tablename__ = "pysql_sqlalchemy_example_table"
+	__tablename__ = "my_table"
 
 	bigint_col = Column(BigInteger, primary_key=True)
 	string_col = Column(String)
@@ -25,4 +24,3 @@ class SampleObject(Base):
 	foo_col = Column(String)
 
 
-Base.metadata.create_all(get_engine())
